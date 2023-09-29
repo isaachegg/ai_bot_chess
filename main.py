@@ -151,23 +151,22 @@ def evaluation():
 
 
 def minimax(alpha, beta, depth):
-    bestEval = -1000000
+    bestEval = -10000
     if depth == 0 or board.is_game_over():
         eval = evaluation()
-        if (eval >= beta):
-            return beta
-        if (alpha < eval):
-            alpha = eval
+        # if (eval >= beta):
+        #     return beta
+        # if (alpha < eval):
+        #     alpha = eval
         return eval
-    print("flag")
     for move in board.legal_moves:
         board.push(move)
         eval = -minimax(-alpha, -beta, depth - 1)
         board.pop()
-        if eval > bestEval:
-            bestEval = eval
         if eval >= beta:
             return eval
+        if eval > bestEval:
+            bestEval = eval
         if eval > alpha:
             alpha = eval
     return bestEval
