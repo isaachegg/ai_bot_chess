@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <title>Chess</title>
+        <py-env>
+        - chess
+        </py-env>
+        <py-script src="main.py" id="py">
+        </py-script>
+
+    </head>
+    <body>
+        <main>
+            <form onsubmit="return false">
+                <div>
+                  <label for="uname">Enter Move: </label>
+                  <input type="text" id="move" name="name"><br>
+                  <input pys-onClick="click" type="submit" id="moveInput" value="submit" />
+                </div>
+            </form>
+            <div>
+                <p>Output:</p>
+                <p id = 'output'></p>
+            </div>
+        </main>
+      </body>
+</html>
